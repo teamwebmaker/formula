@@ -1,0 +1,10 @@
+:root {
+    --column-count: 4;
+    --gap: 30px;
+    --width: calc( (100% - (var(--column-count) - 1) * var(--gap)) / var(--column-count) );
+}
+
+img[src] {
+    display: block;
+    max-width: 100%; 
+}
