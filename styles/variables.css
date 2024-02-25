@@ -1,10 +1,29 @@
 :root {
-    --column-count: 4;
-    --gap: 30px;
-    --width: calc( (100% - (var(--column-count) - 1) * var(--gap)) / var(--column-count) );
+  /* Base Color Properties */
+  --redH: 5; /* hue */
+  --redS: 90%; /* saturation */
+  --redL: 35%; /* lightness */
+  /* Base color */
+  --red: var(--redH), var(--redS), var(--redL);
+  /* Lighter color */
+  --redLight: var(--redH), var(--redS), calc(var(--redL) + 15%);
+  /* Darker color */
+  --redDark: var(--redH), var(--redS), calc(var(--redL) - 15%);
+  --darkGray: 204, 12%, 25%;
+  --column-count: 4;
+  --gap: 30px;
+  --width: calc(
+    (100% - (var(--column-count) - 1) * var(--gap)) / var(--column-count)
+  );
 }
 
 img[src] {
-    display: block;
-    max-width: 100%; 
+  display: block;
+  max-width: 100%;
 }
+
+/* Mix equal amounts of red and green */
+/* color-mix(in hsl, hsl(0 100% 50%), hsl(120 100% 50%)); */
+
+/* Mix 30% of red and 70% of green */
+/* color-mix(in hsl, hsl(0 100% 50%) 30%, hsl(120 100% 50%) 70%); */
