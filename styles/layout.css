@@ -19,9 +19,8 @@
 
 .col {
   --column-count: 4;
-  width: calc(
-    (100% - (var(--column-count) - 1) * var(--gap)) / var(--column-count)
-  );
+  --space: calc((var(--column-count) - 1) * var(--gap));
+  width: calc((100% - var(--space)) / var(--column-count));
 }
 
 .image {
