@@ -17,11 +17,6 @@
   );
 }
 
-img[src] {
-  display: block;
-  max-width: 100%;
-}
-
 /* Mix equal amounts of red and green */
 /* color-mix(in hsl, hsl(0 100% 50%), hsl(120 100% 50%)); */
 

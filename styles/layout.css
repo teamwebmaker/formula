@@ -6,9 +6,8 @@
 }
 
 .container {
-  max-width: 1200px;
+  width: min(100%, 1400px);
   margin-inline: auto;
-  width: 100%;
 }
 
 .row {
@@ -34,19 +33,19 @@
     color-mix(in hsl, hsl(var(--redLight)), hsl(var(--darkGray)));
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
   .col {
     --column-count: 3;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .col {
     --column-count: 2;
   }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 600px) {
   .col {
     --column-count: 1;
   }
