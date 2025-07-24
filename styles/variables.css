@@ -1,24 +1,22 @@
 :root {
-  /* Base Color Properties */
-  --redH: 5; /* hue */
-  --redS: 90%; /* saturation */
-  --redL: 35%; /* lightness */
-  /* Base color */
-  --red: var(--redH), var(--redS), var(--redL);
-  /* Lighter color */
-  --redLight: var(--redH), var(--redS), calc(var(--redL) + 15%);
-  /* Darker color */
-  --redDark: var(--redH), var(--redS), calc(var(--redL) - 15%);
-  --darkGray: 204, 12%, 25%;
-  --column-count: 4;
-  --gap: 30px;
-  --width: calc(
-    (100% - (var(--column-count) - 1) * var(--gap)) / var(--column-count)
+  /* Color System - HSL format */
+  /* Primary Red Color */
+  --color-red-hue: 5;
+  --color-red-saturation: 90%;
+  --color-red-lightness: 35%;
+  --color-red: var(--color-red-hue), var(--color-red-saturation), var(--color-red-lightness);
+
+  /* Red Variants */
+  --color-red-light: var(--color-red-hue), var(--color-red-saturation), calc(var(--color-red-lightness) + 15%);
+  --color-red-dark: var(--color-red-hue), var(--color-red-saturation), calc(var(--color-red-lightness) - 15%);
+
+  /* Neutral Colors */
+  --color-dark-gray: 204, 12%, 25%;
+
+  /* Layout System */
+  --grid-column-count: 4;
+  --grid-gap: 30px;
+  --grid-item-width: calc(
+    (100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count)
   );
 }
-
-/* Mix equal amounts of red and green */
-/* color-mix(in hsl, hsl(0 100% 50%), hsl(120 100% 50%)); */
-
-/* Mix 30% of red and 70% of green */
-/* color-mix(in hsl, hsl(0 100% 50%) 30%, hsl(120 100% 50%) 70%); */

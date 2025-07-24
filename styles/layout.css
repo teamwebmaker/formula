@@ -1,3 +1,4 @@
+/* Page Sections */
 .section {
   min-height: 100vh;
   display: flex;
@@ -5,48 +6,59 @@
   align-items: center;
 }
 
+/* Content Container */
 .container {
   width: min(100%, 1400px);
   margin-inline: auto;
 }
 
+/* Grid Layout */
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap);
+  gap: var(--grid-gap);
 }
 
-.col {
-  --column-count: 4;
-  --space: calc((var(--column-count) - 1) * var(--gap));
-  width: calc((100% - var(--space)) / var(--column-count));
+.grid-item {
+  --grid-column-count: 4;
+  --total-gap-space: calc((var(--grid-column-count) - 1) * var(--grid-gap));
+  width: calc((100% - var(--total-gap-space)) / var(--grid-column-count));
 }
 
+/* Image Styles */
 .image {
-  border: 5px solid hsl(var(--redLight));
-  transition-property: border-color;
-  transition-duration: 0.7s;
+  border: 5px solid hsl(var(--color-red-light));
+  transition: border-color 0.7s ease;
 }
 
 .image:hover {
-  border: 5px solid
-    color-mix(in hsl, hsl(var(--redLight)), hsl(var(--darkGray)));
+  border-color: color-mix(in hsl, hsl(var(--color-red-light)), hsl(var(--color-dark-gray)));
 }
 
+/* Responsive Grid Adjustments */
 @media (max-width: 1200px) {
-  .col {
-    --column-count: 3;
+  .grid-item {
+    --grid-column-count: 3;
   }
 }
 
 @media (max-width: 900px) {
-  .col {
-    --column-count: 2;
+  .grid-item {
+    --grid-column-count: 2;
   }
 }
 
 @media (max-width: 600px) {
-  .col {
-    --column-count: 1;
+  .grid-item {
+    --grid-column-count: 1;
   }
 }
+
+/* Color Mixing Examples (commented out for reference) */
+/*
+  Mix equal amounts of red and green:
+  color-mix(in hsl, hsl(0 100% 50%), hsl(120 100% 50%))
+
+  Mix 30% red and 70% green:
+  color-mix(in hsl, hsl(0 100% 50%) 30%, hsl(120 100% 50%) 70%)
+*/
